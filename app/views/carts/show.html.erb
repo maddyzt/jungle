@@ -1,8 +1,13 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
 <section class="cart-show">
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+
+  <% if enhanced_cart.length > 0 %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -48,5 +53,9 @@
       <% end %>
     </div>
   </div>
+
+  <% else %>
+  <div class="alert alert-danger" role="alert">Cart is empty! Go <a href="/">home.</a></div>
+  <% end %>
 
 </section>
