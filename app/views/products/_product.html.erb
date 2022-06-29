@@ -7,9 +7,22 @@
     </h1>
   <% end%>
   <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
+    <% if product.quantity == 0 %>
+    <p class='soldout' >Sold out</p>
+        <%= button_to add_item_cart_path(product_id: product.id), class: 'btn', disabled: true,
     method: :post do %>
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
+    <% else %>
+    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn',
+    method: :post do %>
+      <%= fa_icon "shopping-cart", text: 'Add' %> 
+    <% end %>
+    <% end %>
   </div>
 </article>
+
+<%# #<Product 
+id: 6, 
+name: "Swamp Root", description: "The Swamp Root is a very common, huge plant and ca...", image: "plante_6.jpg", price_cents: 2449, 
+quantity: 82, created_at: "2022-06-28 15:56:40.806999000 +0000", updated_at: "2022-06-28 15:56:40.806999000 +0000", category_id: 1> %>
