@@ -1,0 +1,27 @@
+<h1 class="pb-2 pt-2">Register</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+  <div class="px-1">
+  First Name: <%= f.text_field :first_name %>
+   </div>
+   <br>
+  <div class="px-1">
+  Last Name: <%= f.text_field :last_name %>
+  </div>
+  <br>
+  <div class="px-1">
+  Email: <%= f.text_field :email %>
+  </div>
+  <br>
+  <div class="px-1">
+  Password: <%= f.password_field :password %>
+  </div>
+  <br>
+  <div class="px-1">
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  </div>
+  <br>
+  <%= f.submit "Submit" %>
+ 
+
+<% end %>
