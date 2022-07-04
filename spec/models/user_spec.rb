@@ -21,8 +21,8 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include ("Password confirmation doesn't match Password")
       end
 
-      it "should not save if password is less than 3 characters long" do 
-        @user = User.new(first_name: "Maddy", email: "Maddy@email.com", password: "12", password_confirmation: "12")
+      it "should not save if password is less than 6 characters long" do 
+        @user = User.new(first_name: "Maddy", email: "Maddy@email.com", password: "1234", password_confirmation: "1234")
         @user.save
         expect(@user.id).not_to be_present
       end
