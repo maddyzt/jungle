@@ -20,11 +20,11 @@ RSpec.describe Product, type: :model do
       @price = 15
       @quantity = 25
       @category = Category.new(name: @name)
-      @product = Product.new(name: @name, price: nil, quantity: @quantity, category: @category)
+      @product = Product.new(name: @name, price_cents: nil, quantity: @quantity, category: @category)
 
       @product.save
 
-      expect(@product.errors.full_messages).to include("Price can't be blank")
+      expect(@product.errors.full_messages).to include("Price is not a number")
     end
 
     it "should not save if there is no quantity present" do
