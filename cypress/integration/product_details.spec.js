@@ -1,7 +1,10 @@
-// it("There is products on the page", () => {
-//   cy.get(".products article").should("be.visible");
-// });
-
-// it("There is 2 products on the page", () => {
-//   cy.get(".products article").should("have.length", 2);
-// });
+describe("product", () => {
+  it("user can click on a product to go to product detail page", () => {
+    cy.visit("/");
+    cy.get(".products article")
+    .first()
+    .click()
+    cy.get(".product-detail")
+    .should("be.visible");
+});
+})
