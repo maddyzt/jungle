@@ -1,9 +1,12 @@
-describe("add to cart", () => {
-  it("user can click on a product to add it to cart", () => {
+describe("Add to Cart", () => {
+  it("should navigate to home", () => {
     cy.visit("/");
-    cy.get("#add-to-cart")
-    .click()
-    cy.get("#cart")
-    .contains("1");
+  })
+  it ("should click on a product's add to cart", () => {
+    cy.contains("Scented Blade").parent('article').find(".btn").click()
+
+  })
+  it ("should increment by 1", () => {
+    cy.contains("My Cart (1)").should("exist")
+  })
 });
-})
